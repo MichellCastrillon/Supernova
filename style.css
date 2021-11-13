@@ -243,37 +243,38 @@ main{
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    background-color: red;
-    
+    margin-top: 40px;
 }
 
 .slogan__text{
-
+    margin-top: 30px;
+    margin-left: 220px;
+    margin-right: 70px;
+    padding:0 50px;
 }
 
-.slogan__image{
+.slogan__text p {
+    font-size: 46px;
+    color: var(--color-principal);
+    text-transform: uppercase;
+  
+  }  
 
+.slogan__image{
+    margin-right: 200px;
 }
 
 .slogan__image img{
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 350px;
 }
 
-.slogan__text {
-  padding: 0 50px;
-}
-.slogan__text p {
-  font-size: 46px;
-  color: var(--color-principal);
-  text-transform: uppercase;
-
-}  
 /* /Slogan */
 
 /* Products */
 .products {
-  margin: 20px 0;
+  margin-top:120px;
+  padding: 0 100px;
 }
 .products h2 {
   font-size: 56px;
@@ -285,26 +286,50 @@ main{
   text-align: center;
   letter-spacing: 3px;  
 }
+.ContenedorProducts{
+     margin: auto;
+    overflow: hidden;
+    width: 100%;
+    /* padding: 0px 175px; */
+    text-align: center;
+    display: inline-block;
+}
+
+.products__slider{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    margin-top: 35px;
+}
+
 .products__slider--shirt {
-  display: flex;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  /* grid-template-rows: 1fr 1fr; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px 20px;
+    width: 30%;
+    margin-bottom: 100px;
+    cursor: pointer;
 }
+
 .products__slider--shirt img {
-  width: 150px;
-  height: 100%;
+    width: 80%;
+    height: 80%;
 }
-.products__slider--shirt a {
-  background-color: var(--color-azul-claro);
-  border-radius: 15px;
-  padding: 4px 18px;
-  color: white;
-  text-decoration: none;
+
+/*transición zoom a imagenes*/
+.products__slider--shirt {
+    transition: transform 0.5s;
 }
+
+.products__slider--shirt:hover {
+    transform: scale(1.1);
+}
+
+.products__slider--shirt a{
+    background-color: var(--color-azul-claro);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+
 /* /Products */
 
 /* Footer */
