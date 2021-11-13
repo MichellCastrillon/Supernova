@@ -1,0 +1,345 @@
+:root {
+    --color-principal: #3A0CA3;
+    --color-rosado-claro: #FF6AD6;
+    --color-rosado-oscuro: #F72585;
+    --color-amarillo: #FCE06D;
+    --color-azul-claro: #4CC9F0;
+    --color-textos: #333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-principal);
+  text-transform: uppercase;
+  line-height: 0.9em;
+}
+
+.outline {
+  color: var(--color-principal);
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+.outline__secondary {
+  color: var(--color-principal);
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-principal);
+}
+
+/*Aplicando CSS GRID al contenido principal*/
+.principal__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: "header"
+                         "hero"
+                         "categorias"
+                         "eslogan"
+                         "camisetas"
+                         "siguenos"
+                         "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+main {
+    grid-area: categorias;
+}
+
+.slogan{
+    grid-area: eslogan;
+}
+
+.products{
+    grid-area: camisetas;
+}
+
+.instagram{
+    grid-area: siguenos;
+}
+
+footer{
+    grid-area: footer;
+}
+
+/*****NAVEGACIÓN*****/
+
+.header__nav {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+.header__nav--logo{
+    margin-left: 30px;
+}
+
+.header__nav--logo {
+    cursor: pointer;
+}
+
+.header__nav--logo img{
+    width: 200px;
+    height: auto;
+}
+
+.header__nav .header__nav--content {
+    font-size: 15px;
+    display: flex;
+}
+
+.header__nav--content nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*para que pase de estar vertical la lista y se ponga horizontal*/
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0px 20px;
+}
+
+nav li .menu {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*----Transición barra debajo de cada elemento del menu----*/
+nav li::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: var(--color-principal);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s ease-out;
+}
+
+#whatsapp {
+    background-color: var(--color-amarillo);
+    border-radius: 15px;
+    padding: 4px 18px;
+    color: black;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+.icons{
+    margin-right: 70px;
+    font-size: 20px;
+    
+}
+
+.icons__ing {
+    margin-left: 5px; 
+    /* color: transparent; */
+    color: black;
+    text-shadow: 0 0 1px white;
+}
+
+.icons__fb {
+    /* color: transparent; */
+    color: black;
+    text-shadow: 0 0 1px white;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-flow:row nowrap;
+    background-image: url(/fondo-hero.jpg);
+    background-size: cover;
+    height: 660px;
+}
+
+.hero__content{
+  height: 100vh;
+  margin-top: 200px;
+  margin-left: 120px;
+}
+
+.hero__content h1{
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero__content .btn-tshirt {
+    padding: 5px 15px;
+    background-color: var(--color-principal);
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero__content .btn-whatsapp {
+    padding: 3px 15px;
+    background-color: transparent;
+    border-radius: 15px;
+    color: black;
+    border: 2px solid black;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.hero__img{
+    margin-top: 40px;
+    margin-left: 100px;
+} 
+/* /Hero */
+
+/* Main */
+main{
+  height: 500px;  
+  background-image: url(/fondo2.jpg);
+  background-size: cover;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+/* /Main */
+
+/* Slogan */
+.slogan {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 20px;
+} 
+ 
+.slogan__textImage{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: red;
+    
+}
+
+.slogan__text{
+
+}
+
+.slogan__image{
+
+}
+
+.slogan__image img{
+    width: 100px;
+    height: 100px;
+}
+
+.slogan__text {
+  padding: 0 50px;
+}
+.slogan__text p {
+  font-size: 46px;
+  color: var(--color-principal);
+  text-transform: uppercase;
+
+}  
+/* /Slogan */
+
+/* Products */
+.products {
+  margin: 20px 0;
+}
+.products h2 {
+  font-size: 56px;
+  text-align: center;
+}
+.products p {
+  font-size: 28px;
+  color: var(--color-principal);
+  text-align: center;
+  letter-spacing: 3px;  
+}
+.products__slider--shirt {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-rows: 1fr 1fr; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 20px;
+}
+.products__slider--shirt img {
+  width: 150px;
+  height: 100%;
+}
+.products__slider--shirt a {
+  background-color: var(--color-azul-claro);
+  border-radius: 15px;
+  padding: 4px 18px;
+  color: white;
+  text-decoration: none;
+}
+/* /Products */
+
+/* Footer */
+footer {
+  height: 250px;
+  overflow: hidden;
+  margin: 0 20px;
+  
+}
+.background {
+  margin: 0 auto;
+  background: rgb(255,106,214);
+  background: radial-gradient(circle, rgba(255,106,214,1) 0%, rgba(58,12,163,1) 100%);
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+}
+.background img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.background__socialmedia {
+  background-color: white;
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+  margin: 20px auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+.background__socialmedia .icons__fb, .icons__ing {
+  color: var(--color-principal);
+  font-size: 30px;
+  display: inline-block;
+  text-align: center;
+}
+/* /Footer */
